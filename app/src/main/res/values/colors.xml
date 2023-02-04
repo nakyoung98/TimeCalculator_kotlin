@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_gray">#FF515151</color>
+    <color name="list_background_blue">#FFf5f9ff</color>
+    <color name="list_background_lightblue">#FFFFFFFF</color>
+    <color name="time_setting_button">#FFDCECFF</color>
+    <color name="guardian_setting_delete_button_background">#FFffeced</color>
+    <color name="guardian_setting_add_button_background">#FFe5f4ff</color>
+    <color name="guardian_setting_delete_button_stroke">#FFe60012</color>
+    <color name="guardian_setting_add_button_stroke">#ff0068b7</color>
+    <color name="red">#FFe60012</color>
+    <color name="blue">#ff0068b7</color>
+    <color name="hint_gray">#FF919191</color>
+    <color name="dark_gray">#FF333333</color>
+    <color name="pantone_purple">#FF6667AB</color>
+    <color name="dark_purple">#FF5a5b96</color>
+    <color name="light_purple">#FFe3e3ff</color>
+    <color name="background">#fff5f5ff</color>
+
+</resources>

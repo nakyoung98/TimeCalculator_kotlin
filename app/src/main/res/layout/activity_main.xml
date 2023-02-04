@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.nakyoung98.timecalculator_kotlin.CalculationResultFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/list_background"
+        app:layout_constraintBottom_toTopOf="@+id/time_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adView" />
+
+    <LinearLayout
+        android:id="@+id/time_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/calculation_buttons_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/hour_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sangju_gotgam"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@color/dark_purple"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sangju_gotgam"
+            android:padding="0dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="@color/dark_purple"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/min_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sangju_gotgam"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@color/dark_purple"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sangju_gotgam"
+            android:padding="0dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="@color/dark_purple"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/second_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sangju_gotgam"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@color/dark_purple"
+            android:textSize="50dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/calculation_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_table"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/add_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/add_button"
+            android:fontFamily="@font/sangju_gotgam"
+            android:onClick="addOnClick"
+            android:text="ADD"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sub_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/sub_button"
+            android:fontFamily="@font/sangju_gotgam"
+            android:onClick="subOnClick"
+            android:text="SUB"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/div_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/div_button"
+            android:fontFamily="@font/sangju_gotgam"
+            android:onClick="divOnClick"
+            android:text="DIV"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/dialog_table"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/dialog_1"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_2"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/dialog_4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_5"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_6"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/dialog_7"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_8"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_9"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/reset_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="resetOnClick"
+                android:text="RESET"
+                android:textColor="@color/red"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/dialog_0"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="dialogOnClick"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dialog_back"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_button"
+                android:fontFamily="@font/sangju_gotgam"
+                android:onClick="deleteOnClick"
+                android:text="←"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+
+            </Button>
+
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
